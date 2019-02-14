@@ -1,0 +1,151 @@
+CSC D84 - Artificial Intelligence
+
+Assignment 2 - MiniMax and Game Trees 
+
+This assignment is worth:
+
+10 AIUs (Artificial Intelligence Units)
+toward the 35% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name 1 (last, first): Gao, Tianxiang
+
+Student Name 2 (last, first): Tse, Vincent
+
+Student number 1: 1001524987
+
+Student number 2: 1001311127
+
+UTORid 1: gaotianx
+
+UTORid 2: tsevinc1  
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: Signed: _Tianxiang Gao__ _Vincent Tse__
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (5 marks) Explain the design of your utility function.
+     Describe all the factors that influence its value, and
+     how their influence was evaluated and integrated into
+     a single, meaningful value. Convince us that your utility
+     makes sense!
+
+There are 4 factors we consider:
+
+a) Manhattan distance from the closest cheese. 
+If the manhattan distance is smaller than a fixed number (currently 5), we run a BFS instead, because 
+there there may be a (relatively) significant difference between manhattan distance and the actual distance of the shortest path.
+For longer paths, BFS and Manhattan returns similar results.
+
+b) Average Manhattan distance of all cheeses
+We subtract this from the maximum distance from one point to the other (size_X + sizeY).
+
+c) Distance from the closest cat
+There is more emphasize to the distance of the closest cat. We use size_X/(closest_cat). So this value is significantly increased if
+the cat is close.
+
+d) Distance from furthest cat
+
+e) Depth of the search
+This is used in the case where the cheese is found in our recursive search and is used to prevent 'ties' in the utility function.
+For example, one terminal point can be "Go Left and get cheese" and another is "Go Up, Down, and then left to get cheese". We want
+the latter to return a smaller utility value.
+
+In the end our utility returns -a + (size_X + size_Y - b) - c - d - e
+
+
+2 .- (2 marks) Ignoring computation time, what is the effect of
+     search depth (number of turns) on the chances of the mouse
+     winning the game.
+
+The mouse becomes smarter and has a higher chance of finding the cheese because there are more "end points" so there is more values to be compared during the recursive calls.
+There is also a good chance for the cheese to be found in the region.
+
+3 .- (2 marks) What situations will cause your mouse to lose?
+     can these be fixed either with the utility function, or
+     by changing the search depth? if so, how?
+
+If there is a dead end in which the search depth cannot "get out of", our mouse gets stuck in the dead end until a cat comes messes around with the utility function. For example, if it takes 10 moves to get our of the dead end, and the search depth is only 5, the mouse will never get out.
+
+We could change manhattan to always use BFS but that would be extremely slow and computationally heavily. Another fix is the increase the search depth so the mouse can search the region outside of the dead-end, but it is also slow.
+
+4 .- (2 marks) Compare cats with smartness=.8 against cats with
+     smartness=1 - which are harder for your mouse to beat?
+     why do you think that is?
+
+smartness=1 is harder for the mouse to beat. We think this is because in smartness=1, the cat takes the manhattan distance as it's
+heuristic so it always tries to reduce it's distance from the mouse. For smartness=0.8, the cat sometimes makes arbitrary moves which allows the mouse to increase it's distance from the cat.
+
+However, since smartness=1 always tries to narrow the distance, if all the cats group up together, it will basically make them all equivalent to a single cat since they never separate. For smartness=0.8, the cats have a chance to scatter and cover more ground.
+
+5 .- (2 marks) Can the mouse be made unbeatable by having an
+     optimal utility function?
+
+No, if there is no way for the mouse to win, the assuming the cat plays perfectly, no matter how good the utility function is,
+there is no way to mouse could win. For example, if the mouse is surrounded by 4 cats, unless the cat moves away from the mouse, the mouse would lose.
+
+6 .- (2 bonus marks) Could a human playing the game in place
+      of the mouse do better than your code? (yes, no, and
+      a reasonable explanation of why)
+
+Yes, a human can look at "the bigger picture". If there as a dead end in the direction that the human is going, they can find out a lot quicker than our code can.
+
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+	              Complete/Working	Partial		Not done
+
+Utility               X
+ function
+
+MiniMax               X
+
+Alpha/Beta            X
+ pruning
+_____________________________________________________
+
+Marking:
+
+(10 marks) Implemented a non-trivial, clever, and
+           effective utility function. It allows the
+           mouse to win the game often. 
+
+(10 marks) Correctly implementing MiniMax. The algorithm
+           should produce the expected behaviour. The
+           mouse should take a reasonable path to the
+           cheese and avoid cats. The cats will try to
+           catch the mouse. Mouse is not easy to catch.
+
+(10 marks) Implemented alpha-beta pruning. The algorithm
+           significantly reduces the amount of search
+           while producing identical results as those
+           from standard MiniMax 
+
+(15 marks) Competitive (TA assigned) based on how smart
+           your mouse is (this is related to your
+           utility function above!)
+
+(15 marks) Answers in this report file
+
+(2 bonus)  Bonus!
+
+Total for A2:       / out of 60
+
+

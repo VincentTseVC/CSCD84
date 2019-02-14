@@ -1,0 +1,127 @@
+CSC D84 - Artificial Intelligence, Unit 1 - Search
+
+This assignment is worth:
+
+10 AIUs (Artificial Intelligence Units)
+toward the assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name 1 (last, first): Gao, Tianxiang
+
+Student Name 2 (last, first):
+
+Student number 1: 1001524987
+
+Student number 2: 1001311127
+
+UTORid 1: gaotianx
+
+UTORid 2: tsevinc1  
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: _Tianxiang Gao__	_Vincent Tse__
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (1 marks) Of BFS and DFS, which search algorithm yields the best results? (i.e. which is more likely
+     to get the mouse to the cheese safely before being eaten?)
+BFS.
+
+2 .- (1 marks) Does this mean that in general BFS is a better search algorithm? (yes/no and give reasons to
+     support your answer based on your observations)
+No, one of the main factors that affect the performance of DFS compared to BFS is that we call the search several times. BFS consistently returns the minimum path, but the path DFS returns is 'arbitrary' and could be extremly different from the path before.
+
+3 .- (2 marks) Describe the heuristic function you used for A* search. Why is this heuristic admissible?
+The heuristic function we used is the absolute difference of the x and y coordinates between the position we are interested in to the closest cheese. This heuristic is admissible because the minimum path we need to take, if no wall existed, is going up/down to the same level as the mouse and then going right/left until we find the closest cheese. This is the exact distance our function returns.
+
+4 .- (1 marks) Explain how your heuristic function accounts for the presence of multiple cheeses.
+The heurstic uses the closest cheese so it can be guarenteed that it is admissible.
+
+5 .- (1 marks) Is A* equivalent to BFS for this problem? or is it better/worse? explain your answer based on 
+     your observations.
+No, A* puts so little emphasis to the nodes in the opposite direction that the visited nodes matches very closely to the path compared to BFS.
+
+6 .- (2 marks) Describe your heuristic function for A*-nokitty. How does it work? what factors are considered
+     into the cost function? is it admissible (yes/no and why)?
+A*-nokitty takes in 4 factors:
+1. The sum of the distances from the mouse to each cat. The further the sum of distances, the lower the heuristic.
+2. The distance from the mouse to the closest cat. The further the distance, the higher the heuristic. This values significantly increases the heuristic (by factor of 1/x where x is the distance)
+3. The sum of the distances from the mouse to each cheese. The further the sum of distances, the larger the heuristic.
+4. The distance from the mouse to the closest cheese. The further the distance, the lower the heuristic. This values significantly decreases the heuristic (by factor of 1/x where x is the distance)
+
+No, it is not admissible because if a cat is near, the heuristic siginificantly increases even if it's close to a cheese.
+
+
+7 .- (2 marks) What is the largest limitation of the search algorithms implemented in this assignment?
+     (i.e. is there anything we are missing that could lead to a smarter mouse?) - this is
+     a more or less open question, but we talked about it in lecture!
+
+We don't know how driver is implemented so we can't predict the movements of the cats (sometimes the cheese). It is difficult to find a path that does not cross with any of the paths the cat can take so in essence, we are reacting to the movements of the cat rather than planning for it.
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+		Complete/Working	Partial		Not done
+
+DFS      x
+
+BFS      x
+
+A*       x
+
+H        x
+
+H_no_cats x
+
+_____________________________________________________
+
+Marking:
+
+(5 marks) Correctly implementing BFS - the search
+          runs and produces the expected search
+          behaviour.
+
+(5 marks) Correctly implementing DFS - the search
+          runs and produces the expected behaviour.
+
+(5 marks)  A* heuristic function is implemented, reasonable,
+           and admissible.
+
+(10 marks) Correctly implementing A* search - the search
+           runs and produces the expected behaviour.
+
+(10 marks) Implemented a **clever**  A*-nokitty heuristic
+           and a working A*-nokitty search. The search
+           should produce a smarter mouse than all of
+           BFS/DFS/A*.
+
+           The heuristic should accounts for known game 
+           factors that affect the mouse's chance of success.
+
+           (to be marked competitively - smartest mouse
+            in the class earns full marks)
+
+(10 marks) Answers in this report file
+
+(up to 15 marks) Assigned by the TA based on how smart your
+		 mouse actually is. Mind what is going on in
+		 the game, and think about how to make your
+		 mouse most likely to win!
+
+Total for A1:       / out of 60
+
+

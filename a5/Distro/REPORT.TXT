@@ -1,0 +1,279 @@
+CSC D84 - Artificial Intelligence
+
+Assignment 4 - Neural Networks for OCR
+
+This assignment is worth:
+
+15 AIUs (Artificial Intelligence Units)
+toward the 35% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name 1 (last, first): Gao, Tianxiang
+
+Student Name 2 (last, first): Tse, Vincent
+
+Student number 1: 1001524987
+
+Student number 2: 1001311127
+
+UTORid 1: gaotianx
+
+UTORid 2: tsevinc1
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+    Signed: _Tianxiang Gao__	_Vincent Tse__
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (1 marks) Train a 1-layer network using the Logistic activation
+               function.
+
+	       Copy/paste the reported classification rates for:
+
+	       Training data (last training round):
+
+Digit 0, correct classification rate=0.946467
+Digit 1, correct classification rate=0.974684
+Digit 2, correct classification rate=0.819444
+Digit 3, correct classification rate=0.841085
+Digit 4, correct classification rate=0.902748
+Digit 5, correct classification rate=0.748373
+Digit 6, correct classification rate=0.960905
+Digit 7, correct classification rate=0.878957
+Digit 8, correct classification rate=0.794179
+Digit 9, correct classification rate=0.812261
+Average correct classification rate: 0.867910
+
+	       Testing data:
+Digit 0, correct classification rate=0.964286
+Digit 1, correct classification rate=0.970044
+Digit 2, correct classification rate=0.825581
+Digit 3, correct classification rate=0.874257
+Digit 4, correct classification rate=0.905295
+Digit 5, correct classification rate=0.769058
+Digit 6, correct classification rate=0.941545
+Digit 7, correct classification rate=0.891051
+Digit 8, correct classification rate=0.804928
+Digit 9, correct classification rate=0.832507
+Average correct classification rate: 0.877855
+
+
+2 .- (1 marks) Repeat the process using the hyperbolic tangent activation
+	       function.
+
+Training Data (Last Round):
+Digit 0, correct classification rate=0.963563
+Digit 1, correct classification rate=0.976786
+Digit 2, correct classification rate=0.851107
+Digit 3, correct classification rate=0.863905
+Digit 4, correct classification rate=0.910506
+Digit 5, correct classification rate=0.822917
+Digit 6, correct classification rate=0.924335
+Digit 7, correct classification rate=0.904669
+Digit 8, correct classification rate=0.774617
+Digit 9, correct classification rate=0.821721
+Average correct classification rate: 0.881413
+
+Test Data:
+Digit 0, correct classification rate=0.970408
+Digit 1, correct classification rate=0.970925
+Digit 2, correct classification rate=0.838178
+Digit 3, correct classification rate=0.890099
+Digit 4, correct classification rate=0.920570
+Digit 5, correct classification rate=0.793722
+Digit 6, correct classification rate=0.926931
+Digit 7, correct classification rate=0.886187
+Digit 8, correct classification rate=0.815195
+Digit 9, correct classification rate=0.830525
+Average correct classification rate: 0.884274
+
+
+3 .- (1 marks) Which type of activation function yielded the best classification
+	       results? which one learned faster?
+The hyperbolic tangent activation function yielded a slightly better result, however, the logistics function
+learned quicker. The logistics function averaged 35% classification rate in the first round while the hyperbolic
+tangent started with 70%, but both ended up with similar end results.
+
+4 .- (1 marks) Train a 2-layer network with hyperbolic-tangent activation, using
+	       150 hidden units. Report the classification rates on training and
+	       testing data just as for 1) and 2).
+
+Training Data (Last Round):
+Digit 0, correct classification rate=0.972803
+Digit 1, correct classification rate=0.971138
+Digit 2, correct classification rate=0.881188
+Digit 3, correct classification rate=0.866534
+Digit 4, correct classification rate=0.941558
+Digit 5, correct classification rate=0.848624
+Digit 6, correct classification rate=0.949495
+Digit 7, correct classification rate=0.921348
+Digit 8, correct classification rate=0.880998
+Digit 9, correct classification rate=0.916318
+Average correct classification rate: 0.915000
+
+Test Data:
+Digit 0, correct classification rate=0.977551
+Digit 1, correct classification rate=0.971806
+Digit 2, correct classification rate=0.902132
+Digit 3, correct classification rate=0.907921
+Digit 4, correct classification rate=0.912424
+Digit 5, correct classification rate=0.841928
+Digit 6, correct classification rate=0.944676
+Digit 7, correct classification rate=0.916342
+Digit 8, correct classification rate=0.907598
+Digit 9, correct classification rate=0.885035
+Average correct classification rate: 0.916741
+
+5 .- (1 marks) Same as 4), except use 10 hidden units instead
+
+Training Data (Last Round):
+Digit 0, correct classification rate=0.982422
+Digit 1, correct classification rate=0.977233
+Digit 2, correct classification rate=0.886861
+Digit 3, correct classification rate=0.902041
+Digit 4, correct classification rate=0.957916
+Digit 5, correct classification rate=0.848552
+Digit 6, correct classification rate=0.950673
+Digit 7, correct classification rate=0.936416
+Digit 8, correct classification rate=0.848614
+Digit 9, correct classification rate=0.883300
+Average correct classification rate: 0.917403
+
+Test Data:
+Digit 0, correct classification rate=0.959184
+Digit 1, correct classification rate=0.967401
+Digit 2, correct classification rate=0.812016
+Digit 3, correct classification rate=0.837624
+Digit 4, correct classification rate=0.907332
+Digit 5, correct classification rate=0.845291
+Digit 6, correct classification rate=0.888309
+Digit 7, correct classification rate=0.869650
+Digit 8, correct classification rate=0.784394
+Digit 9, correct classification rate=0.809713
+Average correct classification rate: 0.868091
+
+6 .- (1 marks) Same as 5), except use 3 hidden units instead
+
+Training Data (Last Round):
+Digit 0, correct classification rate=0.995825
+Digit 1, correct classification rate=0.994595
+Digit 2, correct classification rate=0.966068
+Digit 3, correct classification rate=0.000000
+Digit 4, correct classification rate=0.000000
+Digit 5, correct classification rate=0.000000
+Digit 6, correct classification rate=0.000000
+Digit 7, correct classification rate=0.517034
+Digit 8, correct classification rate=0.000000
+Digit 9, correct classification rate=0.000000
+Average correct classification rate: 0.347352
+
+Test Data:
+Digit 0, correct classification rate=0.991837
+Digit 1, correct classification rate=0.993833
+Digit 2, correct classification rate=0.882752
+Digit 3, correct classification rate=0.000000
+Digit 4, correct classification rate=0.000000
+Digit 5, correct classification rate=0.000000
+Digit 6, correct classification rate=0.000000
+Digit 7, correct classification rate=0.316148
+Digit 8, correct classification rate=0.000000
+Digit 9, correct classification rate=0.000000
+Average correct classification rate: 0.318457
+
+
+7 .- (4 marks) Comment on the experiments in 4, 5, and 6, and give your conclusion
+	       regarding the effect of the number of hidden units on classification
+	       accuracy.
+
+	       What is the network with 3 hidden telling you about this classification
+	       problem?
+From the results of experiment 4, 5, 6, we came to the conclusion that as we reduce the number of hidden layers
+in an experiment, we also reduce the the the classification accuracy.
+
+The network with 3 hidden tells us that the classification requires more features to be trained upon and a more granular representation of the character being recognized.
+
+8 .- (5 marks) Train the best performing network you can. Use any activation function
+	       you wish, and set the number of hidden units so as to achieve the best
+	       performance.
+
+	       Number of hidden units used: 25
+
+	       Classification rate on testing data:
+Digit 0, correct classification rate=0.982653
+Digit 1, correct classification rate=0.970925
+Digit 2, correct classification rate=0.887597
+Digit 3, correct classification rate=0.890099
+Digit 4, correct classification rate=0.909369
+Digit 5, correct classification rate=0.885650
+Digit 6, correct classification rate=0.947808
+Digit 7, correct classification rate=0.903696
+Digit 8, correct classification rate=0.866530
+Digit 9, correct classification rate=0.883053
+Average correct classification rate: 0.912738
+
+9 .- (5 marks) Describe how you would build a network to play the cat
+	        and mouse game (move the mouse to help it survive).
+
+		- Describe what the input is in terms of a vector of
+		  values
+		- Describe what the output layer looks like (how many
+		  neurons and what they encode)
+		- Describe the error function
+		- How many layers should you use?
+For the inputs, we would use the manhattan distance from the cats, the manhattan distance from the cheeses, and the number of walls around each cheese. There will be 5 neurons in the output layer and each will encode the desirability of the move the mouse will make (up, right, down, left, and "no movement"). We will use tanh as our error function. The number of layers we will use is equal to: 2 * (# cheeses) + (# cats) + 5
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+
+        	Complete/Working	Partial		Not done
+
+Logistic
+ activation     x
+
+Tanh
+ activation     x
+
+1L Feed-forward x
+
+1L Backprop     x
+
+1L Classify     x
+
+2L Feed-forward x
+
+2L Backprop     x
+
+2L Classify     x
+_____________________________________________________
+
+Marking:
+
+(15) one-layer, logistic network trains and classifies
+
+(5)  one-layer, tanh network trains and classifies
+
+(25) two-layer, tanh network trains and classifies
+
+(5) two-layer, logistic network trains and classifies
+
+(5 marks) Can train 2-layer networks with either activation function
+	  and any number of hidden units
+
+(20 marks) Answers in this report
+
+Total for A4:       / out of 75
